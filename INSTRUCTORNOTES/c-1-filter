@@ -1,0 +1,26 @@
+c-1-filter
+
+TodoApp.js
+
+import { ALL_TODOS, ACTIVE_TODOS, COMPLETED_TODOS } from './TodoViewStates';
+
+// ...
+
+  function filterTodos(viewState) {
+    return todos.filter(todo => {
+      switch (viewState) {
+        case ALL_TODOS:
+          return true;
+        case ACTIVE_TODOS:
+          return !todo.completed;
+        case COMPLETED_TODOS:
+          return todo.completed;
+        default:
+          return false;
+      }
+    });
+  }
+
+// ...
+
+<TodoList todos={filterTodos(ALL_TODOS)} toggle={onToggleCompleted} />
