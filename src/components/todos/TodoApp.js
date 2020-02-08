@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import TodoService from '../../services/TodoService';
 import toastr from '../../toastr';
 import 'toastr/build/toastr.min.css';
-import TodoList from './TodoList';
 import TodoFooter from './TodoFooter';
 import 'font-awesome/css/font-awesome.min.css';
 import 'todomvc-common/base.css';
@@ -33,12 +32,6 @@ const TodoApp = () => {
    * those variables are reassigned (cDM, cDU with checks).
    */
 
-  const completedCount = todos.reduce(
-    (acc, todo) => (todo.completed ? acc + 1 : acc),
-    0
-  );
-  const activeCount = todos.length - completedCount;
-
   return (
     <section>
       <article className="todoapp">
@@ -46,10 +39,8 @@ const TodoApp = () => {
           <h1 style={{ top: '-175px' }}>todos</h1>
         </header>
 
-        <main className="main">
-          <TodoList todos={todos} />
-        </main>
-        <TodoFooter activeCount={activeCount} />
+        <main className="main"></main>
+        <TodoFooter />
       </article>
 
       <footer className="info">
