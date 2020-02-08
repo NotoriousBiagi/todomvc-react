@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Route } from 'react-router-dom';
 import TodoService from '../../services/TodoService';
 import toastr from '../../toastr';
 import 'toastr/build/toastr.min.css';
@@ -101,20 +100,7 @@ const TodoApp = () => {
         </header>
 
         <main className="main">
-          <Route
-            path="/:filter?"
-            render={props => {
-              const filter = props.match.params.filter || ALL_TODOS;
-              const todosToShow = filterTodos(filter);
-              return (
-                <TodoList
-                  {...props}
-                  todos={todosToShow}
-                  toggle={onToggleCompleted}
-                />
-              );
-            }}
-          />
+          <TodoList todos={filterTodos(ALL_TODOS)} toggle={onToggleCompleted} />
         </main>
         <TodoFooter activeCount={activeCount} />
       </article>
