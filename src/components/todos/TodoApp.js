@@ -86,12 +86,6 @@ const TodoApp = () => {
     saveTodo(updatedTodo);
   }
 
-  const completedCount = todos.reduce(
-    (acc, todo) => (todo.completed ? acc + 1 : acc),
-    0
-  );
-  const activeCount = todos.length - completedCount;
-
   return (
     <section>
       <article className="todoapp">
@@ -116,7 +110,7 @@ const TodoApp = () => {
             }}
           />
         </main>
-        <TodoFooter activeCount={activeCount} />
+        <TodoFooter />
       </article>
 
       <footer className="info">
