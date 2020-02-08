@@ -1,0 +1,36 @@
+a-2-show
+
+TodoList.js
+
+import React from 'react';
+import Todo from './Todo';
+
+const TodoList = ({ todos }) => {
+  const todoList = todos.map(todo => <Todo todo={todo} key={todo.id} />);
+  return <ul className="todo-list">{todoList}</ul>;
+};
+
+export default TodoList;
+
+
+Todo.js
+
+import React from 'react';
+import classNames from 'classnames';
+
+const Todo = ({ todo }) => {
+  return (
+    <li
+      className={classNames({
+        completed: todo.completed
+      })}
+    >
+      <div className="view">
+        <label>{todo.title}</label>
+      </div>
+    </li>
+  );
+};
+
+export default Todo;
+
