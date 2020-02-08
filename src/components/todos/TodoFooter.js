@@ -1,15 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const TodoFooter = ({ activeCount }) => {
-  const activeTodoWord = activeCount === 1 ? 'item' : 'items';
-
+const TodoFooter = () => {
   return (
     <footer className="footer">
-      <span className="todo-count">
-        <strong>{activeCount}</strong> {activeTodoWord} left
-      </span>
-
       <ul className="filters">
         <li>
           <NavLink exact to="/" activeClassName="selected">
