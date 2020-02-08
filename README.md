@@ -114,7 +114,7 @@ $ git checkout <starter branch>
 
 ## Follow the exercise instructions
 
-The exercise instructions will follow in this `README` and they are also included in the project directory in the file `INSTRUCTIONS.MD`.
+The exercise instructions are in the project [wiki](https://github.com/kylebustard/todomvc-react/wiki)
 
 ## git branches
 
