@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import TodoService from '../../services/TodoService';
 import toastr from '../../toastr';
 import 'toastr/build/toastr.min.css';
-import NewTodoForm from './NewTodoForm';
 import TodoList from './TodoList';
 import TodoFooter from './TodoFooter';
 import 'font-awesome/css/font-awesome.min.css';
@@ -34,19 +33,6 @@ const TodoApp = () => {
    * those variables are reassigned (cDM, cDU with checks).
    */
 
-  async function onAdd(val) {
-    try {
-      const todo = {
-        title: val,
-        completed: false
-      };
-      const response = await TodoService.post(todo);
-      setTodos([...todos, response.data]);
-    } catch (error) {
-      toastr.error(error);
-    }
-  }
-
   const completedCount = todos.reduce(
     (acc, todo) => (todo.completed ? acc + 1 : acc),
     0
@@ -58,7 +44,6 @@ const TodoApp = () => {
       <article className="todoapp">
         <header className="header">
           <h1 style={{ top: '-175px' }}>todos</h1>
-          <NewTodoForm addTodo={onAdd} />
         </header>
 
         <main className="main">
