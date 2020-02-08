@@ -33,12 +33,6 @@ const TodoApp = () => {
    * those variables are reassigned (cDM, cDU with checks).
    */
 
-  const completedCount = todos.reduce(
-    (acc, todo) => (todo.completed ? acc + 1 : acc),
-    0
-  );
-  const activeCount = todos.length - completedCount;
-
   return (
     <section>
       <article className="todoapp">
@@ -49,7 +43,7 @@ const TodoApp = () => {
         <main className="main">
           <TodoList todos={todos} />
         </main>
-        <TodoFooter activeCount={activeCount} />
+        <TodoFooter />
       </article>
 
       <footer className="info">
