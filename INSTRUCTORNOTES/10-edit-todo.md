@@ -1,20 +1,31 @@
-d-3-edit
+Solution branch: `d-3-edit`
+
+## Instructions
+
+Create an edit feature for todos.
+
+## Hints
+
+- Use the `useRef` hook
+
+## Code snippets
 
 TodoApp.js
 
-  function onUpdateTitle(id, title) {
-    const foundTodo = todos.find(todo => todo.id === id);
-    const updatedTodo = {
-      ...foundTodo,
-      title
-    };
-    saveTodo(updatedTodo);
-  }
-
-
+```javascript
+function onUpdateTitle(id, title) {
+  const foundTodo = todos.find(todo => todo.id === id);
+  const updatedTodo = {
+    ...foundTodo,
+    title
+  };
+  saveTodo(updatedTodo);
+}
+```
 
 Todo.js
 
+```javascript
 import React, { useState, useRef } from 'react';
 
 // ...
@@ -75,3 +86,4 @@ const Todo = ({ todo, toggle, save, remove }) => {
         onChange={onChange}
         onKeyDown={onKeyDown}
       />
+```

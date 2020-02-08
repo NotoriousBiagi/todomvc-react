@@ -1,7 +1,18 @@
-c-2-link
+Solution branch: `c-2-link`
+
+## Instructions
+
+Provide links for todos based on `completed` status.
+
+## Hints
+
+- Use React Router
+
+## Code snippets
 
 TodoApp.js
 
+```javascript
 import { Route } from 'react-router-dom';
 
 // ...
@@ -24,10 +35,11 @@ import { Route } from 'react-router-dom';
         </main>
         <TodoFooter activeCount={activeCount} />
 
-
+```
 
 TodoFooter.js
 
+```javascript
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -56,3 +68,4 @@ const TodoFooter = () => {
 };
 
 export default TodoFooter;
+```
