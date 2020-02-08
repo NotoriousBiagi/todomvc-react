@@ -88,15 +88,6 @@ const TodoApp = () => {
     }
   }
 
-  function onUpdateTitle(id, title) {
-    const foundTodo = todos.find(todo => todo.id === id);
-    const updatedTodo = {
-      ...foundTodo,
-      title
-    };
-    saveTodo(updatedTodo);
-  }
-
   function onToggleCompleted(id) {
     const foundTodo = todos.find(todo => todo.id === id);
     const updatedTodo = {
@@ -145,7 +136,6 @@ const TodoApp = () => {
                   todos={todosToShow}
                   toggle={onToggleCompleted}
                   remove={onDelete}
-                  save={onUpdateTitle}
                 />
               );
             }}
