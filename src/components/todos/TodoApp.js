@@ -97,19 +97,6 @@ const TodoApp = () => {
     saveTodo(updatedTodo);
   }
 
-  function onDeleteCompleted() {
-    const keepers = todos.filter(todo => !todo.completed);
-    const losers = todos.filter(todo => todo.completed);
-    const promises = losers.map(todo => TodoService.delete(todo.id));
-    Promise.all(promises)
-      .then(_responses => {
-        setTodos(keepers);
-      })
-      .catch(error => {
-        toastr.error(error);
-      });
-  }
-
   const completedCount = todos.reduce(
     (acc, todo) => (todo.completed ? acc + 1 : acc),
     0
@@ -141,11 +128,7 @@ const TodoApp = () => {
             }}
           />
         </main>
-        <TodoFooter
-          activeCount={activeCount}
-          completedCount={completedCount}
-          onClearCompleted={onDeleteCompleted}
-        />
+        <TodoFooter activeCount={activeCount} />
       </article>
 
       <footer className="info">
