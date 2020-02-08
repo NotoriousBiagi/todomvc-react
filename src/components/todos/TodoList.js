@@ -1,9 +1,9 @@
 import React from 'react';
 import Todo from './Todo';
 
-const TodoList = ({ todos, toggle, remove }) => {
+const TodoList = ({ todos, toggle }) => {
   const todoList = todos.map(todo => (
-    <Todo todo={todo} key={todo.id} toggle={toggle} remove={remove} />
+    <Todo todo={todo} key={todo.id} toggle={toggle} />
   ));
   return <ul className="todo-list">{todoList}</ul>;
 };

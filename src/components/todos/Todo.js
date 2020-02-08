@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const Todo = ({ todo, toggle, remove }) => {
+const Todo = ({ todo, toggle }) => {
   return (
     <li
       className={classNames({
@@ -19,13 +19,6 @@ const Todo = ({ todo, toggle, remove }) => {
           }}
         />
         <label>{todo.title}</label>
-        <button
-          data-testid={`delete-button-${todo.id}`}
-          className="destroy"
-          onClick={() => {
-            remove(todo.id);
-          }}
-        />
       </div>
     </li>
   );

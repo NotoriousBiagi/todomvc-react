@@ -64,17 +64,6 @@ const TodoApp = () => {
     }
   }
 
-  async function onDelete(id) {
-    try {
-      // Filter all todos except the one to be removed
-      const remaining = todos.filter(todo => todo.id !== id);
-      await TodoService.delete(id);
-      setTodos(remaining);
-    } catch (error) {
-      toastr.error(error);
-    }
-  }
-
   async function saveTodo(updatedTodo) {
     try {
       const response = await TodoService.put(updatedTodo);
@@ -122,7 +111,6 @@ const TodoApp = () => {
                   {...props}
                   todos={todosToShow}
                   toggle={onToggleCompleted}
-                  remove={onDelete}
                 />
               );
             }}
