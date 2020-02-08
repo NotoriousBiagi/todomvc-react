@@ -5,7 +5,6 @@ import 'toastr/build/toastr.min.css';
 import NewTodoForm from './NewTodoForm';
 import TodoList from './TodoList';
 import TodoFooter from './TodoFooter';
-import { ALL_TODOS, ACTIVE_TODOS, COMPLETED_TODOS } from './TodoViewStates';
 import 'font-awesome/css/font-awesome.min.css';
 import 'todomvc-common/base.css';
 import 'todomvc-app-css/index.css';
@@ -34,21 +33,6 @@ const TodoApp = () => {
    * If the list contains some variables, the effect executes whenever any of
    * those variables are reassigned (cDM, cDU with checks).
    */
-
-  function filterTodos(viewState) {
-    return todos.filter(todo => {
-      switch (viewState) {
-        case ALL_TODOS:
-          return true;
-        case ACTIVE_TODOS:
-          return !todo.completed;
-        case COMPLETED_TODOS:
-          return todo.completed;
-        default:
-          return false;
-      }
-    });
-  }
 
   async function onAdd(val) {
     try {
@@ -100,7 +84,7 @@ const TodoApp = () => {
         </header>
 
         <main className="main">
-          <TodoList todos={filterTodos(ALL_TODOS)} toggle={onToggleCompleted} />
+          <TodoList todos={todos} toggle={onToggleCompleted} />
         </main>
         <TodoFooter activeCount={activeCount} />
       </article>
