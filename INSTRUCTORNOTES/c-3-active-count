@@ -1,0 +1,28 @@
+c-3-active-count
+
+TodoApp.js
+
+  const completedCount = todos.reduce(
+    (acc, todo) => (todo.completed ? acc + 1 : acc),
+    0
+  );
+  const activeCount = todos.length - completedCount;
+
+// ...
+
+        </main>
+        <TodoFooter activeCount={activeCount} />
+      </article>
+
+
+
+TodoFooter.js
+
+const TodoFooter = ({ activeCount }) => {
+  const activeTodoWord = activeCount === 1 ? 'item' : 'items';
+
+  return (
+    <footer className="footer">
+      <span className="todo-count">
+        <strong>{activeCount}</strong> {activeTodoWord} left
+      </span>
