@@ -1,0 +1,25 @@
+{
+    "todos": [
+        {
+            "id": 1,
+            "title": "improv class",
+            "completed": false
+        },
+        {
+            "id": 2,
+            "title": "feed the cat",
+            "completed": true
+        },
+        {
+            "id": 3,
+            "title": "buy milk",
+            "completed": true
+        },
+
+        {
+            "id": 4,
+            "title": "read 'The Art of Computer Programming'",
+            "completed": false
+        }
+    ]
+}
