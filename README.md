@@ -6,6 +6,8 @@
   - [Table of Contents](#table-of-contents)
   - [About](#about)
   - [Installation](#installation)
+    - [Prereqs](#prereqs)
+    - [Cloning the repo](#cloning-the-repo)
   - [Starting the development servers](#starting-the-development-servers)
   - [Using the todo application](#using-the-todo-application)
     - [Viewing todos](#viewing-todos)
@@ -26,9 +28,19 @@ _This was created for a workshop at the University of Texas–Austin providing t
 
 ## Installation
 
-Open terminal and enter the following commands at the command line prompt.
+### Prereqs
 
-> If you have not installed git you can follow installation instructions [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+**git&mdash;** If you have not installed git you can follow installation instructions [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+
+**yarn&mdash;** If [yarn](https://classic.yarnpkg.com/en/docs/install#mac-stable) is not installed you can alternatively use `$ npm install` to install project dependencies.
+
+**node&mdash;** If you need to install npm then that means you also need to [install Node.js](https://nodejs.org/en/download/)(because npm comes with node installations).
+
+**package manager&mdash;** You should consider using a package manager like [Homebrew](https://brew.sh/) for Mac or [Chocolately](https://chocolatey.org/) for Windows. Linux users probably don't need me to tell them about [apt-get](https://linux.die.net/man/8/apt-get) or [yum](https://access.redhat.com/solutions/9934).
+
+### Cloning the repo
+
+Open terminal and enter the following commands at the command line prompt.
 
 ```shell
 $ git clone <repo URL>
